@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,3 +19,9 @@ Route::post('/register', [RegisteredUserController::class, 'store'])
     ->name('login');
 
 require __DIR__.'/auth.php';
+
+
+Route::prefix('v1')->group(function () {
+Route::apiResource('users', UserController::class);
+
+});
