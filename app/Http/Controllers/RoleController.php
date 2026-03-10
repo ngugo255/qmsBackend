@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Test;
+use App\Models\Role;
 use Illuminate\Http\Request;
 
-class TestController extends Controller
+class RoleController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return response()->json(Test::all());
+        return response()->json(Role::all());
     }
 
     /**
@@ -28,23 +28,23 @@ class TestController extends Controller
      */
     public function store(Request $request)
     {
-        $Test = Test::create($request->all());
+        $Role = Role::create($request->all());
 
-        return response()->json($Test, 201);
+        return response()->json($Role, 201);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Test $Test)
+    public function show(Role $Role)
     {
-        return response()->json($Test);
+        return response()->json($Role);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Test $Test)
+    public function edit(Role $Role)
     {
         
     }
@@ -52,21 +52,21 @@ class TestController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Test $Test)
+    public function update(Request $request, Role $Role)
     {
-        $Test->update($request->all());
+        $Role->update($request->all());
 
-        return response()->json($Test);
+        return response()->json($Role);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Test $Test)
+    public function destroy(Role $Role)
     {
-        $Test->delete();
+        $Role->delete();
 
-        return response()->json(['message' => 'Test deleted']);
+        return response()->json(['message' => 'Role deleted']);
     }
     
 

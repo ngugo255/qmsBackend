@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Test;
+use App\Models\Permission;
 use Illuminate\Http\Request;
 
-class TestController extends Controller
+class PermissionController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return response()->json(Test::all());
+        return response()->json(Permission::all());
     }
 
     /**
@@ -28,23 +28,23 @@ class TestController extends Controller
      */
     public function store(Request $request)
     {
-        $Test = Test::create($request->all());
+        $Permission = Permission::create($request->all());
 
-        return response()->json($Test, 201);
+        return response()->json($Permission, 201);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Test $Test)
+    public function show(Permission $Permission)
     {
-        return response()->json($Test);
+        return response()->json($Permission);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Test $Test)
+    public function edit(Permission $Permission)
     {
         
     }
@@ -52,21 +52,21 @@ class TestController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Test $Test)
+    public function update(Request $request, Permission $Permission)
     {
-        $Test->update($request->all());
+        $Permission->update($request->all());
 
-        return response()->json($Test);
+        return response()->json($Permission);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Test $Test)
+    public function destroy(Permission $Permission)
     {
-        $Test->delete();
+        $Permission->delete();
 
-        return response()->json(['message' => 'Test deleted']);
+        return response()->json(['message' => 'Permission deleted']);
     }
     
 
